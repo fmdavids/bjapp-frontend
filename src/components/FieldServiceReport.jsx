@@ -25,7 +25,8 @@ const FieldServiceReport = () => {
     const fetchGroupNumber = async () => {  
         
         try {
-            const res = await axios.get("http://localhost:3031/api/cpr/group")
+            const res = await axios.get("https://baj-pub-app.onrender.com/api/cpr/group")
+            // const res = await axios.get("http://localhost:3031/api/cpr/group")
             // const getGroup = res.data.pub            
                 setReportData(res.data.groupNumber);
                 // console.log(getGroup);
@@ -73,7 +74,8 @@ const FieldServiceReport = () => {
         try {
             const {name, value, } = e.target
             // console.log(e.target.value)
-            const pub = await axios.get(`http://localhost:3031/api/cpr/groupname/${e.target.value}`)
+            const pub = await axios.get(`https://baj-pub-app.onrender.com/api/cpr/groupname/${e.target.value}`)
+            // const pub = await axios.get(`http://localhost:3031/api/cpr/groupname/${e.target.value}`)
             setSelectedGroup(value)
             setPublisher(pub.data.pub)
         } catch (error) {
@@ -86,7 +88,8 @@ const FieldServiceReport = () => {
         const reports = {group: selectedGroup, name: selectedName, month: reportData.month, placements: reportData.placements, videos: reportData.videos, hours: reportData.hours, return_visit: reportData.return_visit, study: reportData.study, remark: reportData.remark}
         console.log(reports)
         try {
-            await axios.post(`http://localhost:3031/api/reports/addreport`, reports );
+            await axios.post(`https://baj-pub-app.onrender.com/api/reports/addreport`, reports );
+            // await axios.post(`http://localhost:3031/api/reports/addreport`, reports );
           } catch (error) {
             console.log(error);
           }     

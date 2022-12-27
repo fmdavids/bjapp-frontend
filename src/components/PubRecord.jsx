@@ -36,9 +36,8 @@ const PubRecord = () => {
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(`http://localhost:3031/api/cpr/addpub`, pubData)
-      // console.log(pubData)
-      // axios.post(`https://bj-pub-app.onrender.com/api/cpr/addpub`, pubData)
+      await axios.post(`https://baj-pub-app.onrender.com/api/cpr/addpub`, pubData)
+      // await axios.post(`http://localhost:3031/api/cpr/addpub`, pubData)
     } catch (error) {
       console.log(error)
     }
