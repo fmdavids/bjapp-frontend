@@ -1,0 +1,13 @@
+.labelTag{
+    width: 60%;
+    background: white;
+    font-weight: 500;
+}
+.selectInput{
+    width: 40%;
+    float: right;
+    font-weight: 500;
+}
+input{
+    border: 1px solid gray;
+}
